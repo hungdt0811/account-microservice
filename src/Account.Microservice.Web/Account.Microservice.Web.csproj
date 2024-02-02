@@ -1,0 +1,69 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <Sdk Name="Microsoft.Build.CentralPackageVersions" Version="2.1.3" />
+  
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+    <OutputType>Exe</OutputType>
+    <WebProjectMode>true</WebProjectMode>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <Compile Remove="Factories\**" />
+    <Compile Remove="wwwroot\upload\**" />
+    <Content Remove="Factories\**" />
+    <Content Remove="wwwroot\upload\**" />
+    <EmbeddedResource Remove="Factories\**" />
+    <EmbeddedResource Remove="wwwroot\upload\**" />
+    <None Remove="Factories\**" />
+    <None Remove="wwwroot\upload\**" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Compile Remove="Controllers\ProjectController.cs" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Ardalis.ApiEndpoints" />
+    <PackageReference Include="Ardalis.ListStartupServices" />
+    <PackageReference Include="Ardalis.Result" />
+    <PackageReference Include="Ardalis.Result.AspNetCore" />
+    <PackageReference Include="AWSSDK.S3" />
+    <PackageReference Include="Cronos" />
+    <PackageReference Include="EntityFramework" />
+    <PackageReference Include="FluentValidation.AspNetCore" />
+    <PackageReference Include="MediatR" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" PrivateAssets="All" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" />
+    <PackageReference Include="QRCoder" />
+    <PackageReference Include="Serilog.Sinks.ApplicationInsights" />
+    <PackageReference Include="Stripe.net" />
+    <PackageReference Include="Swashbuckle.AspNetCore" />
+    <PackageReference Include="Serilog.AspNetCore" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\Account.Microservice.Infrastructure\Account.Microservice.Infrastructure.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Folder Include="Upload\" />
+  </ItemGroup>
+    <ItemGroup>
+    <RuntimeHostConfigurationOption Include="System.Drawing.EnableUnixSupport" Value="true" />
+  </ItemGroup>
+</Project>

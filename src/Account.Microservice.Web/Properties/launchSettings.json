@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "Account.Microservice.Web": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production",
+        "DOTNET_ENVIRONMENT": "Production"
+      },
+      "applicationUrl": "https://localhost:56428;http://localhost:56429"
+    }
+  }
+}

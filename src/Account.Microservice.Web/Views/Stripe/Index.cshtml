@@ -1,0 +1,16 @@
+﻿@model StripeSettingModel
+<div id="link-authentication-element">
+    <!--Stripe.js injects the Link Authentication Element-->
+</div>
+<div id="payment-element">
+    <!--Stripe.js injects the Payment Element-->
+</div>
+<button id="submit">
+    <div class="spinner hidden" id="spinner"></div>
+    <span id="button-text">今支払い</span>
+</button>
+<div id="payment-message" class="hidden"></div>
+<input type="hidden" id="urlSuccess" value="@Model.UrlSuccess" />
+<input type="hidden" id="urlFail" value="@Model.UrlFailure" />
+<input type="hidden" id="urlPayment" value="@Model.UrlPayment" />
+<input type="hidden" id="publicKey" value="@Model.PublicKey" />
